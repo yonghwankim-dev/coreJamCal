@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코어젬스톤 계산기</title>
+    
+</head>
+<body>
+    <div>
+        <label for="category">구분</label>
+        <select name="category" id="category">
+            <option value="skill">스킬</option>
+            <option value="reinforce">강화</option>
+        </select>
+    </div>
+    <div>
+        <label for="curLevel">현재 레벨</label>
+        <input type="text" name="curLevel" id="curLevel" value="1">
+    </div>
+    <div>
+        <label for="targetLevel">목표 레벨</label>
+        <input type="text" name="targetLevel" id="targetLevel" value="25">
+    </div>
+    <div>
+        <label for="calResult">계산 결과</label>
+        <input type="text" name="calResult" id="result" readonly>
+    </div>
+    <div>
+        <button id="calBtn">계산</button>
+    </div>
+    <script src="res/js/index.js"></script>
+</body>
+</html>
