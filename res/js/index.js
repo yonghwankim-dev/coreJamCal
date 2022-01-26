@@ -27,18 +27,37 @@ const targetLevel = document.querySelector("#targetLevel");     // 목표 레벨
 const result = document.querySelector("#result");               // 계산결과
 
 const cal = function(e){
-    const c = category.options[category.selectedIndex].value;    
-    result.value = c==="skill" ? skillCal() : reinCal();
-}
+    const c = category.options[category.selectedIndex].value;
+
+    if(checkInput(curLevel.value) && checkInput(targetLevel.value))
+    {
+        result.value = c==="skill" ? skillCal() : reinCal();
+    }
+    else
+    {
+        alert("현재 레벨 또는 목표 레벨의 올바른 범위를 입력해주세요. (1~25)");
+    }
+};
+
+const checkInput = function(level){
+    if(level>=1 && level<=25)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+};
 
 // 스킬 코어 강화 계산
 const skillCal = function(e){
     return Math.ceil((skill_reduced_exp[targetLevel.value] - (skill_reduced_exp[curLevel.value]))/50);
-}
+};
 // 강화 코어 강화 계산
 const reinCal = function(e){
     return Math.ceil((rein_reduced_exp[targetLevel.value] - (rein_reduced_exp[curLevel.value]))/50);
-}
+};
 
 const calBtn = document.querySelector("#calBtn");
 calBtn.addEventListener("click",cal);
