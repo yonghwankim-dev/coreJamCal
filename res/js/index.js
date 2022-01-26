@@ -1,5 +1,32 @@
-// 필요한 코어 젬스톤 = Math.floor((목표레벨의 누적경험치 - 현재레벨의 누적 경험치)/50)
+import renderSkillCoreExpTable from "./skillCoreExpTable.js";
+import renderReinCoreExpTable from "./reinCoreExpTable.js";
 
+const tablinks = document.querySelectorAll(".tablinks");
+
+const openTabContent = function(e, tabName){
+    console.log("hello function");
+  let i, tabcontent, tablinks;
+
+  tabcontent = document.querySelectorAll(".tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.querySelectorAll(".tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.querySelector("#"+tabName).style.display = "block";
+  e.currentTarget.className += " active";    
+};
+
+tablinks.forEach((item)=>{
+    item.addEventListener("click",function(e){
+        openTabContent(e,item.value);
+    });
+});
+
+// 필요한 코어 젬스톤 = Math.floor((목표레벨의 누적경험치 - 현재레벨의 누적 경험치)/50)
 const CORE_EXP = 55;        // 스킬/강화 코어 1레벨 기준 요구경험치
 
 const skill_required_exp = [0]; // 스킬 코어 레벨간 요구경험치 리스트
@@ -62,7 +89,7 @@ const reinCal = function(e){
 const calBtn = document.querySelector("#calBtn");
 calBtn.addEventListener("click",cal);
 
-
-
-
+document.querySelector("#defaultOpen").click();
+renderSkillCoreExpTable();
+renderReinCoreExpTable();
 

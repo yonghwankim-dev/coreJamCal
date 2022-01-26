@@ -9,37 +9,82 @@
     
 </head>
 <body>
-    <div class="main">
-        <div class="container">
-            <div class="title">
-                <h2>코어젬스톤 계산기</h2>
-            </div>
-            <div>
-                <label for="category">구분</label>
-                <select name="category" id="category">
-                    <option value="skill">스킬</option>
-                    <option value="reinforce">강화</option>
-                </select>
-            </div>
-            <div>
-                <label for="curLevel">현재 레벨</label>
-                <input type="number" min="1" max="25" name="curLevel" id="curLevel" value="1" required>
-            </div>
-            <div>
-                <label for="targetLevel">목표 레벨</label>
-                <input type="number" min="1" max="25" name="targetLevel" id="targetLevel" value="25" required>
-            </div>
-            <div>
-                <label for="calResult">계산 결과</label>
-                <input type="text" name="calResult" id="result" readonly>
-            </div>
-            <div>
-                <button id="calBtn">계산</button>
+    <div class="tab">
+        <button class="tablinks" value="calculator" id="defaultOpen">코어젬스톤 계산기</button>
+        <button class="tablinks" value="skillExpTable">스킬코어 경험치표</button>
+        <button class="tablinks" value="reinExpTable">강화코어 경험치표</button>
+    </div>
+    <div id="calculator" class="tabcontent">
+        <div class="cal">
+            <div class="cal_container">
+                <div>
+                    <div class="title">
+                        <h2>코어젬스톤 계산기</h2>
+                    </div>
+
+                    <label for="category">구분</label>
+                    <select name="category" id="category">
+                        <option value="skill">스킬</option>
+                        <option value="reinforce">강화</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="curLevel">현재 레벨</label>
+                    <input type="number" min="1" max="25" name="curLevel" id="curLevel" value="1" required>
+                </div>
+                <div>
+                    <label for="targetLevel">목표 레벨</label>
+                    <input type="number" min="1" max="25" name="targetLevel" id="targetLevel" value="25" required>
+                </div>
+                <div>
+                    <label for="calResult">계산 결과</label>
+                    <input type="text" name="calResult" id="result" readonly>
+                </div>
+                <div>
+                    <button id="calBtn">계산</button>
+                </div>
             </div>
         </div>
-        
     </div>
-    
-    <script src="res/js/index.js"></script>
+    <div id="skillExpTable" class="tabcontent">
+        <table class="skillTable table">
+            <thead>
+                <tr>
+                    <th colspan="6">스킬 코어 경험치 표</th>
+                </tr>
+                <tr>
+                    <th>코어 등급</th>
+                    <th>요구 경험치</th>
+                    <th>누적 경험치</th>
+                    <th>분해시 V코어 조각 제공량</th>
+                    <th>누적 코어 필요량</th>
+                    <th>누적 응축된 경험 필요량</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="reinExpTable" class="tabcontent">
+        <table class="reinTable table">
+            <thead>
+                <tr>
+                    <th colspan="6">강화 코어 경험치 표</th>
+                </tr>
+                <tr>
+                    <th>코어 등급</th>
+                    <th>요구 경험치</th>
+                    <th>누적 경험치</th>
+                    <th>분해시 V코어 조각 제공량</th>
+                    <th>누적 코어 필요량</th>
+                    <th>누적 응축된 경험 필요량</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script type="module" src="res/js/index.js"></script>
 </body>
 </html>

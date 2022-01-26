@@ -22,7 +22,7 @@ const createReinCoreExpList = function(){
 }
 
 const renderReinCoreExpTable = function(){
-    const tbody = document.querySelector(".table tbody");
+    const tbody = document.querySelector(".reinTable tbody");
     let tr,td;
 
     const reinCoreExpList = createReinCoreExpList();
@@ -44,4 +44,4 @@ const renderReinCoreExpTable = function(){
     }
 }
 
-renderReinCoreExpTable();
+export default renderReinCoreExpTable;

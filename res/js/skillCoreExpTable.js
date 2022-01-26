@@ -23,7 +23,7 @@ const createSkillCoreExpList = function(){
 }
 
 const renderSkillCoreExpTable = function(){
-    const tbody = document.querySelector(".table tbody");
+    const tbody = document.querySelector(".skillTable tbody");
     let tr,td;
 
     const skillCoreExpList = createSkillCoreExpList();
@@ -45,4 +45,4 @@ const renderSkillCoreExpTable = function(){
     }
 }
 
-renderSkillCoreExpTable();
+export default renderSkillCoreExpTable;
