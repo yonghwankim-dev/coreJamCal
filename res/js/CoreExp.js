@@ -50,11 +50,11 @@ export default class CoreExp{
         return this.reinCoredecomNumList[level];
     }
 
-    static getReducedCore(level){
-        return Math.ceil(this.getReducedExp(level)/50);
+    static getReducedCore(level, category){
+        return Math.ceil(this.getReducedExp(level,category)/50);
     }
-    static getReduceCondenCore(level){
-        return Math.ceil(this.getReducedExp(level)/150);
+    static getReduceCondenCore(level, category){
+        return Math.ceil(this.getReducedExp(level,category)/150);
     }
 
 

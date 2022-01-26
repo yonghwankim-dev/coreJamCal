@@ -13,8 +13,8 @@ const createReinCoreExpList = function(){
                         CoreExp.getRequiredExp(i,"rein"),
                         CoreExp.getReducedExp(i,"rein"),
                         CoreExp.getReinDecomNum(i),
-                        CoreExp.getReducedCore(i),
-                        CoreExp.getReduceCondenCore(i));
+                        CoreExp.getReducedCore(i,"rein"),
+                        CoreExp.getReduceCondenCore(i,"rein"));
 
         coreExpList.push(coreExp);
     }

@@ -14,8 +14,8 @@ const createSkillCoreExpList = function(){
                         CoreExp.getRequiredExp(i, "skill"),
                         CoreExp.getReducedExp(i, "skill"),
                         CoreExp.getSkillDecomNum(i),
-                        CoreExp.getReducedCore(i),
-                        CoreExp.getReduceCondenCore(i));
+                        CoreExp.getReducedCore(i,"skill"),
+                        CoreExp.getReduceCondenCore(i,"skill"));
 
         coreExpList.push(coreExp);
     }
